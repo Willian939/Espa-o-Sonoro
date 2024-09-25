@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Compra de Ingressos - Museu Espaço Sonoro</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js" defer></script> 
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Museu Espaço Sonoro</h1>
+        <p>Adquira seu ingresso para uma experiência sonora única!</p>
+        <button class="btn btn-success" data-toggle="modal" data-target="#compraModal">Comprar Ingressos</button>
+
+       
+        <div class="modal fade" id="compraModal" tabindex="-1" role="dialog" aria-labelledby="compraModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="compraModalLabel">Compra de Ingressos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="compraForm">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Seu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantidade">Quantidade de Ingressos</label>
+                                <input type="number" class="form-control" id="quantidade" value="1" min="1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Comprar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="index.html" class="btn btn-secondary">Voltar para a Página Inicial</a>
+        </div>
+    </div>
+</body>
+</html>
+
