@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Sonoro Museu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js" defer></script>
+    <style>
+        body { background-color: #f0e68c; } 
+        .header { background-color: #4b3d28; color: white; padding: 20px 0; text-align: center; } 
+        .event-card { margin-bottom: 20px; }
+        .modal-content { background-color: #e6d8b8; animation: fadeIn 0.5s; } 
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card { border: 1px solid #8b5a2b; } 
+        .btn-primary { background-color: #8b5a2b; border-color: #8b5a2b; } 
+        .btn-success { background-color: #6b8e23; border-color: #6b8e23; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Espaço Sonoro</h1>
+        <p>Descubra a magia da música e do som</p>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Exposições em Destaque</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" data-questao="Você sabia que o violão, em sua forma moderna, evoluiu de instrumentos como a guitarra espanhola e a vihuela?">
+                    <img src="vio.jpg" alt="O Violão" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">O Violão</h5>
+                        <p class="card-text">Esse Violão foi pioneiro dos violões atuais.</p>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#curiosidadeModal">Curiosidade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" data-questao="Os violinos históricos que sobreviveram foram feitos por luthiers renomados como Stradivari e Guarneri.">
+                    <img src="viol.jpg" alt="Viola Brasileira" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Violinos</h5>
+                        <p class="card-text">Violinos históricos de músicos do Titanic.</p>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#curiosidadeModal">Curiosidade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" data-questao="A lira é um dos instrumentos mais antigos da história, usada por poetas na Grécia antiga.">
+                    <img src="li.jpg" alt="Imagem 3" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Lira</h5>
+                        <p class="card-text">Liras de tribos indígenas históricas.</p>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#curiosidadeModal">Curiosidade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5">Eventos</h2>
+        <div class="row">
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="bi.jpg" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Marcos Biancardini</h5>
+                        <p>Data: 20/08/24 | Horário: 19:00</p>
+                        <a href="#" class="btn btn-primary quiz-button" data-toggle="modal" data-target="#quizModal" data-instrumento="Marcos Biancardini">Teste seu conhecimento</a>
+                        <a href="compra.html" class="btn btn-success">Comprar Ingressos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="re.jpg" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Renato Andrade</h5>
+                        <p>Data: 20/09/24 | Horário: 19:00</p>
+                        <a href="#" class="btn btn-primary quiz-button" data-toggle="modal" data-target="#quizModal" data-instrumento="Renato Andrade">Teste seu conhecimento</a>
+                        <a href="compra.html" class="btn btn-success">Comprar Ingressos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="al.jpg" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Almir Sater</h5>
+                        <p>Data: 15/09/24 | Horário: 20:00</p>
+                        <a href="#" class="btn btn-primary quiz-button" data-toggle="modal" data-target="#quizModal" data-instrumento="Almir Sater">Teste seu conhecimento</a>
+                        <a href="compra.html" class="btn btn-success">Comprar Ingressos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="curiosidadeModal" tabindex="-1" role="dialog" aria-labelledby="curiosidadeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Curiosidade</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body" id="curiosidadeText"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Quiz Interativo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="quizQuestion"></p>
+                        <input type="text" id="quizAnswer" class="form-control" placeholder="Digite sua resposta">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="submitQuiz">Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
